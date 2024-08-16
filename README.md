@@ -36,3 +36,21 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 - **Job submission system**: Given the likely size of data files being run through this pipeline, we assume you will be using a batch job submission system. This pipeline assumes you will be using [SLURM](https://slurm.schedmd.com/documentation.html). If your system is different, please do take a look through the script to adjust relevant sections. This is mainly relevant for threading of various pipeline elements. For example: `-t ${SLURM_CPUS_PER_TASK}` If you are not using a job submission system, it *may* be possible to simply replace these incidences with an appropriate number of threads linked to your own system.
 
+- **PATH**: Throughout the pipeline, we assume all software packages are installed in your `PATH`. If you do not have administrator access for install, it would be best to give explicit paths to each install.
+
+## Directory creation and file path locations
+
+Prior to running the script for the first time, you will need to input the file path for each of the required input and output directories (shown below). These should only require creating once (unless you specifically require different locations for different projects). Each sample you run through the pipleine will get it's own directory within each of these, so overwriting of directories/files between projects *should* be avoided.
+
+```
+### 1. Define all of the separate location paths required.
+
+DECONTAM_READS=/storage02/or-microbio/MAG_singles_test_allSamples ### This location can be changed to where ever your samples are
+MEGAHIT=/storage02/or-microbio/MAG_singles_test/megahit_single ### Needs creating
+METABAT=/storage02/or-microbio/MAG_singles_test/metabat_single ### Needs creating
+MAXBIN=/storage02/or-microbio/MAG_singles_test/maxbin_single ### Needs creating
+CONCOCT=/storage02/or-microbio/MAG_singles_test/concoct_single ### Needs creating
+DAStool=/storage02/or-microbio/MAG_singles_test/DAS_Tool_input ### Needs creating
+CHECKM=/storage02/or-microbio/MAG_singles_test/checkm_output ### Needs creating
+DASOUT=/storage02/or-microbio/MAG_singles_test/DAS_Tool_output ### Needs creating
+GTDBTK=/storage02/or-microbio/MAG_singles_test/GTDBTK_output ### Needs creating
