@@ -30,7 +30,5 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 - **Ancient vs. Modern**: While this pipeline is intended for use with aDNA, it will work similarly with modern sequence reads.
 
-- **Job submission system**: Given the likely size of data files being run through this pipeline, we assume you will be using a batch job submission system. This pipeline assumes you will be using [SLURM](https://slurm.schedmd.com/documentation.html). If your system is different, please do take a look through the script to adjust relevant sections. This is mainly relevant for threading of various pipeline elements. For example:
-
-  ```megahit -1 ${DECONTAM_READS}/${name}_R1.fastq.gz -2 ${DECONTAM_READS}/${name}_R2.fastq.gz -o ${MEGAHIT}/${name}_coassembly -t ${SLURM_CPUS_PER_TASK} --kmin-1pass --no-mercy
+- **Job submission system**: Given the likely size of data files being run through this pipeline, we assume you will be using a batch job submission system. This pipeline assumes you will be using [SLURM](https://slurm.schedmd.com/documentation.html). If your system is different, please do take a look through the script to adjust relevant sections. This is mainly relevant for threading of various pipeline elements. For example: `-t ${SLURM_CPUS_PER_TASK}` If you are not using a job submission system, it *may* be possible to simply replace these incidences with an appropriate number of threads linked to your own system.
 
