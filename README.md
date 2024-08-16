@@ -24,4 +24,8 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 ## Considerations before beginning
 
-Text...
+- **Quality filtering**: This pipeline won't run any quality control steps (data cleaning, filtering, adaptor trimming etc...). We assume that you will have performed suitable steps for your own data type.
+
+- **Sequence type(s)**: This pipeline assumes your data is in the form of paired-end (PE) illumina reads. While the steps *may* work on other data types, it is likely that you will need to tweak the script based on reviewing the documentation whihc packages with each of the software employed here.
+
+- **Ancient vs. Modern**: While this pipeline is intended for use with aDNA, it will work similarly with modern sequence reads.
