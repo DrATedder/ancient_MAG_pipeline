@@ -29,3 +29,9 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 - **Sequence type(s)**: This pipeline assumes your data is in the form of paired-end (PE) illumina reads. While the steps *may* work on other data types, it is likely that you will need to tweak the script based on reviewing the documentation whihc packages with each of the software employed here.
 
 - **Ancient vs. Modern**: While this pipeline is intended for use with aDNA, it will work similarly with modern sequence reads.
+
+- **Job submission system**: Given the likely size of data files being run through this pipeline, we assume you will be using a batch job submission system. This pipeline assumes you will be using [SLURM](https://slurm.schedmd.com/documentation.html). If your system is different, please do take a look through the script to adjust relevant sections. This is mainly relevant for threading of various pipeline elements. For example:
+
+  ```bash
+megahit -1 ${DECONTAM_READS}/${name}_R1.fastq.gz -2 ${DECONTAM_READS}/${name}_R2.fastq.gz -o ${MEGAHIT}/${name}_coassembly -t ${SLURM_CPUS_PER_TASK} --kmin-1pass --no-mercy
+  ```
