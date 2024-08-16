@@ -22,7 +22,11 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 - **SAMtools v1.12**: A tool for interacting with high-throughput sequencing data [(Danecek *et al*. 2021)](https://pubmed.ncbi.nlm.nih.gov/33590861). Can be accessed/downloaded [here](http://www.htslib.org/).
 
+- **Anvi'o**: A multi-omics platform for microbial genomics. Can be accessed/downloaded [here](https://anvio.org/).
+
 ## Considerations before beginning
+
+- **Anvi'o tool use**: For ease of use, some of the tools used in this pipeline were employed through [Anvi'o](https://anvio.org/), including: `Bowtie2`, `CONCOCT` and `MetaBAT`. It is likely possible to perform this analysis without the use of `Anvi'o`, but the pipeline will likely need some tweeks.
 
 - **Quality filtering**: This pipeline won't run any quality control steps (data cleaning, filtering, adaptor trimming etc...). We assume that you will have performed suitable steps for your own data type.
 
