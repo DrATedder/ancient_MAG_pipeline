@@ -26,7 +26,7 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 ## Considerations before beginning
 
-- **Anvi'o tool use**: For ease of use, some of the tools used in this pipeline were employed through [Anvi'o](https://anvio.org/), including: `Bowtie2`, `CONCOCT` and `MetaBAT`. It is likely possible to perform this analysis without the use of `Anvi'o`, but the pipeline will likely need some tweeks.
+- **Anvi'o tool use**: For ease of use, some of the tools used in this pipeline were employed through `Anvi'o`, including: `Bowtie2`, `CONCOCT` and `MetaBAT`. It is likely possible to perform this analysis without the use of `Anvi'o`, but the pipeline will likely need some tweeks.
 
 - **Quality filtering**: This pipeline won't run any quality control steps (data cleaning, filtering, adaptor trimming etc...). We assume that you will have performed suitable steps for your own data type.
 
