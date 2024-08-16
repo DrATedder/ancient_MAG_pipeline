@@ -8,13 +8,13 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 - **METABAT**: text
 
-- **MAXBIN**: text
+- **Maxbin2 v2.2.7**: A tool used for contig binning [(Wu et al. 2016)](). Can be accessed/downloaded [here]().
 
-- **CONCOCT**: text
+- **CONCOCT v1.1.0**: A contig binning tool [(Alneberg et al. 2014)](). Can be accessed/downloaded [here]().
 
-- **DAStool**: text
+- **DAStool v1.1.6**: A tool to select high qualtiy bins ([Sieber et al. 2018])(). Can be accessed/downloaded [here]().
 
-- **CHECKM**: text
+- **CheckM v1.2.2**: A tool to assess completeness and contamination of MAGs ([Parks et al. 2015])(). Can be accessed/downloaded [here]().
 
 - **GTDBTK**: text
 
