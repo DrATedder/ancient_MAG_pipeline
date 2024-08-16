@@ -32,5 +32,5 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 - **Job submission system**: Given the likely size of data files being run through this pipeline, we assume you will be using a batch job submission system. This pipeline assumes you will be using [SLURM](https://slurm.schedmd.com/documentation.html). If your system is different, please do take a look through the script to adjust relevant sections. This is mainly relevant for threading of various pipeline elements. For example:
 
-  ```megahit -1 ${DECONTAM_READS}/${name}_R1.fastq.gz -2 ${DECONTAM_READS}/${name}_R2.fastq.gz -o ${MEGAHIT}/${name}_coassembly -t ${SLURM_CPUS_PER_TASK} --kmin-1pass --no-mercy```
+  ```megahit -1 ${DECONTAM_READS}/${name}_R1.fastq.gz -2 ${DECONTAM_READS}/${name}_R2.fastq.gz -o ${MEGAHIT}/${name}_coassembly -t ${SLURM_CPUS_PER_TASK} --kmin-1pass --no-mercy
 
