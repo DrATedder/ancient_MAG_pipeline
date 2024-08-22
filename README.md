@@ -57,7 +57,7 @@ DASOUT=/path/to/desired/dasout/output
 GTDBTK=/path/to/desired/gtdbtk/output
 ```
 
-# Cite ancient_MAG_pipeline
+## Cite ancient_MAG_pipeline
 
 If you use `ancient_MAG_pipeline` in your study, please reference it using the details below. Please note, this pipeline leverages a lot of existing software (listed and linked above), please ensure you also give appropriate credit to the authors of those software.
 
