@@ -55,3 +55,10 @@ DAStool=/path/to/desired/dastool/output
 CHECKM=/path/to/desired/checkm/output
 DASOUT=/path/to/desired/dasout/output
 GTDBTK=/path/to/desired/gtdbtk/output
+```
+
+# Cite ancient_MAG_pipeline
+
+If you use `ancient_MAG_pipeline` in your study, please reference it using the details below. Please note, this pipeline leverages a lot of existing software (listed and linked above), please ensure you also give appropriate credit to the authors of those software.
+
+Francesca J. Standeven, Gwyn Dahlquist-Axe, Camilla F. Speller, Conor J. Meehan and Andrew Tedder (XXXX) An efficient pipeline for creating metagenomic-assembled genomes from ancient DNA in oral microbiome samples.
