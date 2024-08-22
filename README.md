@@ -38,6 +38,8 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 - **PATH**: Throughout the pipeline, we assume all software packages are installed in your `PATH`. If you do not have administrator access for install, it would be best to give explicit paths to each install.
 
+- **Sample grouping**: Typically, one would create MAGs from groups of samples (grouped based on pre-defined criteria). `ancient_MAG_pipeline.sh` performs the pipeline analysis on single (paired-end) samples. This *may* reduce the number of MAGs you retrieve. It would likely be worth thinking about meaningful sample groupings (i.e. time-points, geographic locations etc...). The script can be tweaked to accomodate this.
+
 ## Directory creation and file path locations
 
 Prior to running the script for the first time, you will need to input the file path for each of the required input and output directories (shown below). All output directories only require creating once (unless you specifically require different locations for different projects). Each sample you run through the pipleine will get it's own directory within each of these, so overwriting of directories/files between projects *should* be avoided.
