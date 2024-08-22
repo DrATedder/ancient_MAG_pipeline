@@ -24,6 +24,8 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 
 - `Anvi'o`: A multi-omics platform for microbial genomics. Can be accessed/downloaded [here](https://anvio.org/).
 
+  **Note**. It is likely that other versions of these software cn be substituted and perfrom adequately. We have **not** tested this though.
+
 ## Considerations before beginning
 
 - **Anvi'o tool use**: For ease of use, some of the tools used in this pipeline were employed through `Anvi'o`, including: `Bowtie2`, `CONCOCT` and `MetaBAT`. It is likely possible to perform this analysis without the use of `Anvi'o`, but the pipeline will need some tweeks.
