@@ -1,6 +1,6 @@
 # ancient_MAG_pipeline
 
-A shell script pipeline intended to aid in the creation of **M**etagenomic **A**ssembled **G**enomes (**MAGs**) from ancient microbiome samples. The paper associated with this data is available here: [Standeven *et al*.]().
+A shell script pipeline intended to aid in the creation of **M**etagenomic **A**ssembled **G**enomes (**MAGs**) from ancient microbiome samples. The paper associated with this data is available here: [Standeven *et al*.](https://www.biorxiv.org/content/10.1101/2024.09.18.613623v2).
 
 ## Pipeline software pre-requisites
 
@@ -63,4 +63,4 @@ GTDBTK=/path/to/desired/gtdbtk/output
 
 If you use `ancient_MAG_pipeline` in your study, please reference it using the details below. Please note, this pipeline leverages a lot of existing software (listed and linked above), please ensure you also give appropriate credit to the authors of those software.
 
-Francesca J. Standeven, Gwyn Dahlquist-Axe, Camilla F. Speller, Conor J. Meehan and Andrew Tedder (XXXX) **An efficient pipeline for creating metagenomic-assembled genomes from ancient DNA in oral microbiome samples.**
+Francesca J. Standeven, Gwyn Dahlquist-Axe, Camilla F. Speller, Conor J. Meehan and Andrew Tedder (2024) **An efficient pipeline for creating metagenomic-assembled genomes from ancient DNA in oral microbiome samples.** *BioRxiv* doi:[https://doi.org/10.1101/2024.09.18.613623](https://doi.org/10.1101/2024.09.18.613623)
