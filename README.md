@@ -1,7 +1,7 @@
 # ancient_MAG_pipeline
 
 <p align="center">
-  <img src="https://github.com/DrATedder/ancient_MAG_pipeline/blob/cf1eb651dcf5a5b434ddf2094061bce0d9878228/ancient_MAG_pipeline.png" alt="Logo" width="200"/>
+  <img src="https://github.com/DrATedder/ancient_MAG_pipeline/blob/cf1eb651dcf5a5b434ddf2094061bce0d9878228/ancient_MAG_pipeline.png" alt="Logo" width="1000"/>
 </p>
 
 
