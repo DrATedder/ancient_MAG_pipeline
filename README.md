@@ -1,5 +1,10 @@
 # ancient_MAG_pipeline
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/USERNAME/REPO_NAME/BRANCH_NAME/assets/logo.png" alt="Logo" width="200"/>
+</p>
+
+
 A shell script pipeline intended to aid in the creation of **M**etagenomic **A**ssembled **G**enomes (**MAGs**) from ancient microbiome samples. The paper associated with this data is available here: [Standeven *et al*.](https://www.biorxiv.org/content/10.1101/2024.09.18.613623v2).
 
 ## Pipeline software pre-requisites
