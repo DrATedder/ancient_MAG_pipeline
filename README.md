@@ -44,6 +44,8 @@ A shell script pipeline intended to aid in the creation of **M**etagenomic **A**
 - **PATH**: Throughout the pipeline, we assume all software packages are installed in your `PATH`. If you do not have administrator access for install, it would be best to give explicit paths to each install.
 
 - **Sample grouping**: Typically, one would create MAGs from groups of samples (grouped based on pre-defined criteria). `ancient_MAG_pipeline.sh` performs the pipeline analysis on single (paired-end) samples. This *may* reduce the number of MAGs you retrieve. It would likely be worth thinking about meaningful sample groupings (i.e. time-points, geographic locations etc...). The script can be tweaked to accomodate this.
+- **Checkm** and **GTDB-Tk**: Both require large database downloads to function. Make sure you follow the specific installation instructions to ensure these are downloaded and accessible.
+- **Creating sample specific output directories**: Many of the steps in this pipeline will need to create unique sample directories to store outputs. While I haven't included steps explicitly here (to avoid pre-empting how you want to set those up) to create these directories, it's likely worth doing so to avoid error messages. It's also worth pointing out that some of the programmes expressly refuse to over-write existing files, so it's worth thinking about that if you intend to run the script multiple times.
 
 ## Directory creation and file path locations
 
