@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="https://github.com/DrATedder/ancient_MAG_pipeline_1/blob/cf1eb651dcf5a5b434ddf2094061bce0d9878228/ancient_MAG_pipeline_1.png" alt="Logo" width="1000"/>
-</p>
+  <img src="https://github.com/DrATedder/ancient_MAG_pipeline_1/blob/cf1eb651dcf5a5b434ddf2094061bce0d9878228/ancient_MAG_pipeline_1.png" alt="Logo" width="1000"/></p>
 
 
 A shell script pipeline intended to aid in the creation of **M**etagenomic **A**ssembled **G**enomes (**MAGs**) from ancient microbiome samples. The paper associated with this data is available here: [Standeven *et al*.](https://www.biorxiv.org/content/10.1101/2024.09.18.613623v2).
