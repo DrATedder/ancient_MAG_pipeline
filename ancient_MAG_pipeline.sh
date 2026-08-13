@@ -52,18 +52,21 @@ for i in ${DECONTAM_READS}/*_R1.fastq.gz ### Needs correcting for actual sequenc
   anvio concoct_coverage_table.py ${CONCOCT}/${name}_final.contigs_simplified_10k.bed ${MEGAHIT}/${name}_coassembly/${name}_coassembly.bam > ${CONCOCT}/${name}_final.contigs_simplified_concoct_coverage_table.tsv
   anvio concoct --composition_file ${CONCOCT}/${name}_final.contigs_simplified_10k.fa --coverage_file ${CONCOCT}/${name}_final.contigs_simplified_concoct_coverage_table.tsv -b ${CONCOCT}/${name}_final.contigs -t ${SLURM_CPUS_PER_TASK}
   anvio merge_cutup_clustering.py ${CONCOCT}/${name}_final.contigs_clustering_gt1000.csv > ${CONCOCT}/${name}_final.contigs_clustering_merged.csv
+  mkdir -p ${CONCOCT}/${name}/${name}_concoct_final.contigs
   anvio extract_fasta_bins.py ${MEGAHIT}/${name}_coassembly/final.contigs_simplified_2500.fa ${CONCOCT}/${name}_final.contigs_clustering_merged.csv --output_path ${CONCOCT}/${name}/${name}_concoct_final.contigs/
   echo -e '\n***METABAT***\n'
   anvio jgi_summarize_bam_contig_depths --outputDepth ${MEGAHIT}/${name}_coassembly/${name}_mapped_depth.txt --pairedContigs ${MEGAHIT}/${name}_coassembly/${name}_paired.txt ${MEGAHIT}/${name}_coassembly/${name}_coassembly.bam
+  mkdir -p ${METABAT}/${name}/${name}_output-file
   anvio metabat -i ${MEGAHIT}/${name}_coassembly/final.contigs_simplified_2500.fa -a ${MEGAHIT}/${name}_coassembly/${name}_mapped_depth.txt -m 2000 --saveCls -t ${SLURM_CPUS_PER_TASK} -o ${METABAT}/${name}/${name}_output-file
   echo -e '\n***MAXBIN***\n'
   pileup.sh in=${MEGAHIT}/${name}_coassembly/${name}_coassembly.bam out=${MEGAHIT}/${name}_coassembly/${name}_cov.txt
   awk '{print$1"\t"$5}' ${MEGAHIT}/${name}_coassembly/${name}_cov.txt | grep -v '^#' > ${MEGAHIT}/${name}_coassembly/${name}_abundance.txt
-  perl /storage02/or-microbio/Maxbin/MaxBin-2.2.7/run_MaxBin.pl -thread ${SLURM_CPUS_PER_TASK} -contig ${MEGAHIT}/${name}_coassembly/final.contigs_simplified_2500.fa -out ${MAXBIN}/${name}/${name}_Maxbin2 -abund ${MEGAHIT}/${name}_coassembly/${name}_abundance.txt
+  mkdir -p ${MAXBIN}/${name}/${name}_Maxbin2
+  perl run_MaxBin.pl -thread ${SLURM_CPUS_PER_TASK} -contig ${MEGAHIT}/${name}_coassembly/final.contigs_simplified_2500.fa -out ${MAXBIN}/${name}/${name}_Maxbin2 -abund ${MEGAHIT}/${name}_coassembly/${name}_abundance.txt
   echo -e '\n***DAS_Tool prep.***\n'
-  sh /storage02/or-microbio/tool_scripts/Fasta_to_Contigs2Bin.sh -i ${METABAT}/${name}/ -e fa >${DAStool}/${name}_MetaBAT2_bins.tsv
-  sh /storage02/or-microbio/tool_scripts/Fasta_to_Contigs2Bin.sh -i ${CONCOCT}/${name}/${name}_concoct_final.contigs/ -e fa >${DAStool}/${name}_concoct_bins.tsv
-  sh /storage02/or-microbio/tool_scripts/Fasta_to_Contigs2Bin.sh -i ${MAXBIN}/${name}/ -e fasta >${DAStool}/${name}_Maxbin_bins.tsv
+  sh Fasta_to_Contigs2Bin.sh -i ${METABAT}/${name}/ -e fa >${DAStool}/${name}_MetaBAT2_bins.tsv
+  sh Fasta_to_Contigs2Bin.sh -i ${CONCOCT}/${name}/${name}_concoct_final.contigs/ -e fa >${DAStool}/${name}_concoct_bins.tsv
+  sh Fasta_to_Contigs2Bin.sh -i ${MAXBIN}/${name}/ -e fasta >${DAStool}/${name}_Maxbin_bins.tsv
   echo -e '\n***CHECKM***\n'
   checkm lineage_wf ${CONCOCT}/${name}/${name}_concoct_final.contigs/ ${CONCOCT}/${name}/${name}_concoct_final.contigs/checkm_concoct -x .fa -t ${SLURM_CPUS_PER_TASK} --reduced_tree > ${CHECKM}/${name}_concoct_output.txt
   checkm lineage_wf ${METABAT}/${name}/ ${METABAT}/${name}/checkm_metabat -x .fa -t ${SLURM_CPUS_PER_TASK} --reduced_tree > ${CHECKM}/${name}_metabat_output.txt
